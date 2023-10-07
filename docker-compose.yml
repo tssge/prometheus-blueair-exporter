@@ -1,0 +1,13 @@
+---
+version: "2.1"
+services:
+    exporter:
+        image: tssge/prometheus-blueair-exporter:latest
+        container_name: BlueairExporter
+        environment:
+         - 'BLUEAIR_ADDRESS=0.0.0.0:2735'
+         - 'BLUEAIR_PASSWORD=WhatEverYourPasswordIs'
+         - 'BLUEAIR_DELAY=300s'
+         - 'BLUEAIR_EMAIL=WhatEverYourEmailIs'
+        ports:
+         - 2735:2735
